@@ -1,3 +1,7 @@
+-- Thiết lập mã hóa ký tự UTF-8
+SET NAMES utf8mb4;
+SET CHARACTER SET utf8mb4;
+
 -- Khởi tạo Database
 CREATE DATABASE IF NOT EXISTS `clothing_db` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE `clothing_db`;

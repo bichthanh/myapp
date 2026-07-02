@@ -1,16 +1,16 @@
 <?php
-$page_title = 'Antigravity Fashion - Trang Chủ';
+$page_title = 'Fashion - Trang Chủ';
 require_once 'includes/header.php';
 
-// Lấy các tham số lọc và tìm kiếm từ URL
+
 $category_id = isset($_GET['category_id']) ? intval($_GET['category_id']) : null;
 $search = isset($_GET['search']) ? trim($_GET['search']) : '';
 
-// 1. Lấy danh sách toàn bộ danh mục sản phẩm từ DB
+
 $categories_stmt = $pdo->query("SELECT * FROM categories ORDER BY name ASC");
 $categories = $categories_stmt->fetchAll();
 
-// 2. Xây dựng câu SQL để truy vấn sản phẩm
+
 $query = "SELECT p.*, c.name as category_name 
           FROM products p 
           JOIN categories c ON p.category_id = c.id 

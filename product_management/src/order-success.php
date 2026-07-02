@@ -25,7 +25,7 @@ if (!$order) {
         </div>
         
         <h2>Đặt Hàng Thành Công!</h2>
-        <p>Cảm ơn bạn đã mua sắm tại <strong>Antigravity Fashion</strong>. Nhân viên bán hàng sẽ liên hệ với bạn để xác nhận đơn hàng trong thời gian sớm nhất.</p>
+        <p>Cảm ơn bạn đã mua sắm tại <strong>Fashion</strong>. Nhân viên bán hàng sẽ liên hệ với bạn để xác nhận đơn hàng trong thời gian sớm nhất.</p>
         
         <!-- Hộp thông tin tóm tắt hóa đơn -->
         <div style="background-color: #f8fafc; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px; text-align: left; margin: 30px 0; font-size: 0.95rem;">

@@ -92,9 +92,15 @@ if ($action === 'update' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     
     <!-- Thông báo nếu có -->
     <?php if (isset($_GET['msg']) && $_GET['msg'] === 'added'): ?>
-        <div class="alert alert-success">Sản phẩm đã được thêm vào giỏ hàng thành công!</div>
+        <div class="alert alert-success alert-animate" style="display: flex; align-items: center; gap: 10px; box-shadow: var(--shadow-sm); font-size: 1.05rem;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: #059669;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <span>Đã thêm sản phẩm vào giỏ hàng thành công!</span>
+        </div>
     <?php elseif (isset($_GET['msg']) && $_GET['msg'] === 'updated'): ?>
-        <div class="alert alert-success">Giỏ hàng đã được cập nhật thành công!</div>
+        <div class="alert alert-success alert-animate" style="display: flex; align-items: center; gap: 10px; box-shadow: var(--shadow-sm); font-size: 1.05rem;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: #059669;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <span>Đã cập nhật số lượng giỏ hàng thành công!</span>
+        </div>
     <?php endif; ?>
 
     <?php if (empty($_SESSION['cart'])): ?>

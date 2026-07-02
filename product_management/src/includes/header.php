@@ -2,6 +2,7 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+ob_start(); // Bật bộ đệm đầu ra (Output Buffering) để tránh lỗi "headers already sent" khi redirect
 require_once __DIR__ . '/../config/database.php';
 
 // Tính tổng số lượng sản phẩm trong giỏ hàng để hiển thị trên badge
@@ -17,8 +18,8 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hệ thống quản lý bán hàng quần áo thời trang nam nữ cao cấp Antigravity Fashion.">
-    <title><?php echo isset($page_title) ? $page_title : 'Antigravity Fashion - Cửa Hàng Thời Trang Cao Cấp'; ?></title>
+    <meta name="description" content="Hệ thống quản lý bán hàng quần áo thời trang nam nữ cao cấp Fashion.">
+    <title><?php echo isset($page_title) ? $page_title : 'Fashion - Cửa Hàng Thời Trang'; ?></title>
     <!-- Nhúng CSS chính -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -26,7 +27,7 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
     <!-- Thanh điều hướng Header -->
     <header>
         <div class="container navbar">
-            <a href="index.php" class="nav-logo">ANTIGRAVITY FASHION</a>
+            <a href="index.php" class="nav-logo">FASHION</a>
             
             <ul class="nav-links">
                 <li><a href="index.php">Trang chủ / Cửa hàng</a></li>
