@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: clothing_web_container
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - db
+    networks:
+      - clothing_net
+
+  db:
+    image: mysql:8.0
+    container_name: clothing_db_container
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword123
+      MYSQL_DATABASE: clothing_db
+      MYSQL_USER: clothing_user
+      MYSQL_PASSWORD: clothing_pass123
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./database:/docker-entrypoint-initdb.d
+    networks:
+      - clothing_net
+
+volumes:
+  db_data:
+
+networks:
+  clothing_net:
+    driver: bridge
